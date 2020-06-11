@@ -7,6 +7,24 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+function palindrome(str) {
+    let reversed = str.split('').reverse().join('');
+    return reversed === str
+}
+
+palindrome('mom');
+
+//this is not an ideal solution, but it does work. It is not ideal because it is comaparing the first half (incrementally) with the second half and then iterating through to comapre the second half with the first. Compaing more than is neccessary to test for a palindrome.
+
+//The every method executes the provided callback function once for each element present in the array until it finds the one where callback returns a falsy value. If such an element is found, the every method immediately returns false. Otherwise, if callback returns a truthy value for all elements, every returns true.
+
+// The every() method tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.
+//arr.every(callback(element[, index[, array]])[, thisArg])
+
+function palindrome2(str){
+    return str.split('').every((char, i) => {
+        return char === str[str.length - i - 1];
+    });
+}
 
 module.exports = palindrome;
