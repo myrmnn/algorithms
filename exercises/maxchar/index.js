@@ -19,14 +19,13 @@ function maxChar(str) {
         }
     }
 
-    for(char in charMap){
+    for(let char in charMap){
         if(charMap[char] > max){
-            max = char;
+            max = charMap[char];
+        maxChar = char;
         }
-        maxChar = charMap[char];
     }
 
-    console.log(max)
 return maxChar;
 }
 
